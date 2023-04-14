@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Montserrat:wght@400;600;700&display=swap');
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-thumb {
+  width: 10px;
+  border-radius: 5px;
+  background-clip: padding-box;
+  border: 2px solid #121629;
+}
+
+*::-webkit-scrollbar-thumb {        
+  box-shadow: inset 0 0 0 10px #121629;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #232946;
+}
+
+body h1 {
+    text-align: center;
+    color: #fffffe;
+    margin-bottom: 30px;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.js-container, .react-container {
+    overflow-y: scroll;
+    height: 75%;
+    min-width: 27%;
+}
+
+a {
+    position: relative;
+    width: fit-content;
+    text-decoration: none;
+    color: #b8c1ec;
+    transition: all 0.3s ease-in-out;
+}
+
+a:active {
+    color: #fffffe;
+}
+
+a:nth-child(n+2) {
+    font-weight: 300;
+    color: #fffffe;
+}
+
+a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #121629;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+a:hover::before {
+    transform: scaleX(1);
+}
+
+.push {
+    list-style: none;
+}
+
+.push li {
+    position: relative;
+    padding: 20px 0 10px 40px;
+    font-variant: small-caps;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.push li:before {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #121629;
+    content: "";
+    left: 0;
+    transition: .3s ease-in-out;
+    top: 27px;
+}
+
+.push li:after {
+    position: absolute;
+    border-left: 1px dotted #121629;
+    width: 1px;
+    bottom: -12px;
+    content: "";
+    left: 3px;
+    top: 48px;
+}
+
+.push li:hover:before{box-shadow: 0 0 0 10px rgba(0,0,0,.2)}
+.push li:last-child:after {content: none;}
